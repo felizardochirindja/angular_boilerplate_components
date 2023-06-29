@@ -1,0 +1,38 @@
+<div class="side-nav-item-container">
+    <!-- nav item disabled -->
+    <div class="side-nav-item side-nav-item-disabled" *ngIf="navItem.disabled">
+        <ng-container *ngTemplateOutlet="navItemTemplate"></ng-container>
+    </div>
+
+    <!-- nav item enabled -->
+    <ng-container *ngIf="!navItem.disabled">
+        <a class="side-nav-item" [ngClass]="{'side-nav-item-active': navItem.active}" [routerLink]="[navItem.link]"
+            [routerLinkActive]="'side-nav-item-active'">
+            <ng-container *ngTemplateOutlet="navItemTemplate"></ng-container>
+        </a>
+    </ng-container>
+</div>
+
+<!-- nav item -->
+<ng-template #navItemTemplate>
+    <!-- icon -->
+    <div class="side-nav-item-icon" *ngIf="navItem.icon">{{ navItem.icon }}</div>
+
+    <!-- Title & Subtitle -->
+    <div class="side-nav-item-title-container">
+        <div class="side-nav-item-title">
+            <span>{{ navItem.title }}</span>
+        </div>
+
+        <div class="side-nav-item-subtitle" *ngIf="navItem.subtitle">
+            <span>{{ navItem.subtitle }}</span>
+        </div>
+    </div>
+
+    <!-- Badge -->
+    <div class="side-nav-item-icon-badge" *ngIf="navItem.badge">
+        <div class="side-nav-item-icon-badge-content">
+            {{ navItem.badge.text }}
+        </div>
+    </div>
+</ng-template>

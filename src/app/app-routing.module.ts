@@ -1,15 +1,11 @@
-import { ItemListComponent } from './item-list.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AlertComponent } from './core/design-system/alert/alert.component';
 
-const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'list' },
-  { path: 'list', component: ItemListComponent },
-  { path: 'details/:index', loadComponent: () => import('./item-view.component').then(m => m.itemViewComponent) },
-];
+const routes: Routes = [];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

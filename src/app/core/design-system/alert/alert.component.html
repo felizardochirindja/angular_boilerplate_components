@@ -1,0 +1,21 @@
+<div class="alert-container">
+    <!-- icon -->
+    <div class="alert-icon" *ngIf="showIcon">
+        <span>{{ getIconByType() }}</span>
+    </div>
+
+    <div class="alert-content">
+        <!-- title -->
+        <div class="alert-title">
+            <ng-content select="[title]"></ng-content>
+        </div>
+
+        <!-- message -->
+        <div class="alert-message">
+            <ng-content select="[message]"></ng-content>
+        </div>
+    </div>
+
+    <!-- dismiss button -->
+    <button class="alert-close-button" (click)="dismiss()">x</button>
+</div>

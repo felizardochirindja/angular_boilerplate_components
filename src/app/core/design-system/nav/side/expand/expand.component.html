@@ -1,0 +1,55 @@
+<div class="side-nav-item-container">
+    <!-- nav item disabled -->
+    <div class="side-nav-item side-nav-item-disabled" *ngIf="navItem.disabled">
+        <ng-container *ngTemplateOutlet="navItemTemplate"></ng-container>
+    </div>
+
+    <!-- nav item enabled -->
+    <ng-container *ngIf="!navItem.disabled">
+        <div class="side-nav-item" [ngClass]="{'side-nav-expand-item-active': navItem.active}" (click)="toggleExpand()">
+            <ng-container *ngTemplateOutlet="navItemTemplate"></ng-container>
+        </div>
+    </ng-container>
+
+    <!-- nav item children -->
+    <ng-container *ngIf="expanded">
+        <div class="side-nav-item-children" *ngFor="let child of navItem.children">
+            <ng-container *ngIf="!child.hidden(child)">
+                <ds-normal-side-nav-item [navItem]="child" *ngIf="child.type === 'normal'"></ds-normal-side-nav-item>
+
+                <ds-expand-side-nav-item [navItem]="child" *ngIf="child.type === 'expand'"></ds-expand-side-nav-item>
+            </ng-container>
+
+            <div class="divide" *ngIf="child.type === 'divide'">divide</div>
+
+            <div class="space" *ngIf="child.type === 'space'">space</div>
+        </div>
+    </ng-container>
+</div>
+
+<!-- nav item -->
+<ng-template #navItemTemplate>
+    <!-- icon -->
+    <div class="side-nav-item-icon" *ngIf="navItem.icon">{{ navItem.icon }}</div>
+
+    <!-- Title & Subtitle -->
+    <div class="side-nav-item-title-container">
+        <div class="side-nav-item-title">
+            <span>{{ navItem.title }}</span>
+        </div>
+
+        <div class="side-nav-item-subtitle" *ngIf="navItem.subtitle">
+            <span>{{ navItem.subtitle }}</span>
+        </div>
+    </div>
+
+    <!-- Badge -->
+    <div class="side-nav-item-icon-badge" *ngIf="navItem.badge">
+        <div class="side-nav-item-icon-badge-content">
+            {{ navItem.badge.text }}
+        </div>
+    </div>
+
+    <!-- arow -->
+    <div class="side-nav-item-arrow">{{ expanded ? 'arrow up' : 'arrow down' }}</div>
+</ng-template>

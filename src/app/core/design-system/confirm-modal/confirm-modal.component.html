@@ -1,0 +1,35 @@
+<div class="modal-container">
+    <!-- dismiss button -->
+    <button *ngIf="config.dismissible" class="modal-dismiss-button" (click)="close()">x</button>
+
+    <!-- Content -->
+    <div class="modal-content">
+        <!-- Icon -->
+        <div *ngIf="config.icon" class="modal-icon">
+            {{ config.icon.name }}
+        </div>
+
+        <div *ngIf="config.title || config.message" class="modal-info">
+            <!-- Title -->
+            <div *ngIf="config.title" [innerHTML]="config.title" class="modal-info-title"></div>
+
+            <!-- Message -->
+            <div *ngIf="config.message" [innerHTML]="config.message" class="modal-info-message"></div>
+        </div>
+    </div>
+
+    <!-- Actions -->
+    <div *ngIf="config.actions" class="modal-actions">
+        <!-- Cancel -->
+        <button *ngIf="config.actions.cancel" class="modal-cancel-button">
+            {{ config.actions.cancel.label }}
+        </button>
+
+        <!-- Confirm -->
+        <button *ngIf="config.actions.confirm" class="modal-confirm-button" (click)="confirm()">
+            {{ config.actions.confirm.label }}
+        </button>
+    </div>
+</div>
+
+<div class="modal-backdrop" (click)="close()"></div>
