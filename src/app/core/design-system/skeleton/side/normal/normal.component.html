@@ -1,11 +1,12 @@
 <!-- Navigation -->
-
+<ds-side-nav [navItems]="navItems" *ngIf="navOpened"></ds-side-nav>
 
 <!-- Wrapper -->
 <div>
     <!-- Header -->
-    <header class="">
-        <button>toggle nav</button>
+    <header>
+        <button (click)="navOpened = !navOpened">toggle nav</button>
+        <div>header</div>
     </header>
 
     <!-- Content -->
