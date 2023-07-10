@@ -6,11 +6,11 @@ import { NgForOf, NgIf } from '@angular/common';
 
 @Component({
   selector: 'ds-pack-side-nav-item',
-  templateUrl: './pack.component.html',
-  styleUrls: ['./pack.component.css'],
+  templateUrl: './pack-side-nav-item.component.html',
+  styleUrls: ['./pack-side-nav-item.component.css'],
   standalone: true,
   imports: [DefaultSideNavItemComponent, ExpandSideNavItemComponent, NgIf, NgForOf]
 })
-export class PackComponent {
+export class PackSideNavItemComponent {
   @Input() navItem!: NavItem
 }
