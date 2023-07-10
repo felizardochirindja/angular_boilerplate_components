@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlertComponent } from './core/design-system/alert/alert.component';
-import { VerticalComponent } from './core/design-system/nav/side/side.component';
+import { SideNavComponent } from './core/design-system/nav/side/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { VerticalComponent } from './core/design-system/nav/side/side.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    VerticalComponent,
+    SideNavComponent,
     ConfirmModalComponent
   ],
   providers: [],

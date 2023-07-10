@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { VerticalComponent } from '../../../nav/side/side.component';
+import { SideNavComponent } from '../../../nav/side/side-nav.component';
 import { NavItem } from '../../../nav/nav.types';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RouterOutlet, VerticalComponent],
+  imports: [CommonModule, RouterOutlet, SideNavComponent],
   templateUrl: './normal.component.html',
   styleUrls: ['./normal.component.css'],
 })
