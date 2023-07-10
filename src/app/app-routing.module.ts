@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { EmptyComponent } from './core/design-system/skeleton/empty/empty.component';
 import { ExampleComponent } from './modules/example/example.component';
-import { NormalComponent } from './core/design-system/skeleton/side/normal/normal.component';
+import { DefaultSideSkeletonComponent } from './core/design-system/skeleton/side/default/default-side-skeleton.component';
 
 const routes: Routes = [
   {
-    path: '', component: NormalComponent,
+    path: '', component: DefaultSideSkeletonComponent,
     children: [
       { path: 'example', component: ExampleComponent }
     ]

@@ -7,10 +7,10 @@ import { NavItem } from '../../../nav/nav.types';
 @Component({
   standalone: true,
   imports: [CommonModule, RouterOutlet, SideNavComponent],
-  templateUrl: './normal.component.html',
-  styleUrls: ['./normal.component.css'],
+  templateUrl: './default-side-skeleton.component.html',
+  styleUrls: ['./default-side-skeleton.component.css'],
 })
-export class NormalComponent {
+export class DefaultSideSkeletonComponent {
   navOpened: boolean = true;
   
   navItems: NavItem[] = [
