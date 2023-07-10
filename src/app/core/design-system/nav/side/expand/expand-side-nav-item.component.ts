@@ -6,12 +6,12 @@ import { DefaultSideNavItemComponent } from '../default/default-side-nav-item.co
 
 @Component({
   selector: 'ds-expand-side-nav-item',
-  templateUrl: './expand.component.html',
-  styleUrls: ['./expand.component.css'],
+  templateUrl: './expand-side-nav-item.component.html',
+  styleUrls: ['./expand-side-nav-item.component.css'],
   standalone: true,
-  imports: [DefaultSideNavItemComponent, ExpandComponent,  NgClass, RouterLink, RouterLinkActive, NgIf,NgForOf, NgTemplateOutlet, JsonPipe]
+  imports: [DefaultSideNavItemComponent, ExpandSideNavItemComponent,  NgClass, RouterLink, RouterLinkActive, NgIf,NgForOf, NgTemplateOutlet, JsonPipe]
 })
-export class ExpandComponent {
+export class ExpandSideNavItemComponent {
   @Input() navItem!: NavItem
   expanded: boolean = false
 

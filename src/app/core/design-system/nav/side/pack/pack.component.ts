@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NavItem } from '../../nav.types';
-import { ExpandComponent } from '../expand/expand.component';
+import { ExpandSideNavItemComponent } from '../expand/expand-side-nav-item.component';
 import { DefaultSideNavItemComponent } from '../default/default-side-nav-item.component';
 import { NgForOf, NgIf } from '@angular/common';
 
@@ -9,7 +9,7 @@ import { NgForOf, NgIf } from '@angular/common';
   templateUrl: './pack.component.html',
   styleUrls: ['./pack.component.css'],
   standalone: true,
-  imports: [DefaultSideNavItemComponent, ExpandComponent, NgIf, NgForOf]
+  imports: [DefaultSideNavItemComponent, ExpandSideNavItemComponent, NgIf, NgForOf]
 })
 export class PackComponent {
   @Input() navItem!: NavItem
