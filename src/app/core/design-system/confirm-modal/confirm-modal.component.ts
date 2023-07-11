@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConfirmModalConfig } from './shared/confirm-modal.types';
 
