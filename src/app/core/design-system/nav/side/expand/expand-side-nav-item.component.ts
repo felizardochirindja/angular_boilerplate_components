@@ -2,14 +2,16 @@ import { Component, Input } from '@angular/core';
 import { NavItem } from '../../nav.types';
 import { JsonPipe, NgClass, NgForOf, NgIf, NgTemplateOutlet } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { EmptySideNavItemComponent } from '../empty/empty-side-nav-item.component';
+import { SimpleSideNavItemComponent } from '../empty/simple-side-nav-item.component';
+import { SeparatorSideNavItemComponent } from '../separator/separator-side-nav-item.component';
+import { SpaceSideNavItemComponent } from '../space/space-side-nav-item.component';
 
 @Component({
   selector: 'ds-expand-side-nav-item',
   templateUrl: './expand-side-nav-item.component.html',
-  styleUrls: ['./expand-side-nav-item.component.css'],
+  styleUrls: ['../styles/fixed.css'],
   standalone: true,
-  imports: [EmptySideNavItemComponent, ExpandSideNavItemComponent,  NgClass, RouterLink, RouterLinkActive, NgIf,NgForOf, NgTemplateOutlet, JsonPipe]
+  imports: [SimpleSideNavItemComponent, ExpandSideNavItemComponent, SeparatorSideNavItemComponent, SpaceSideNavItemComponent, NgClass, RouterLink, RouterLinkActive, NgIf,NgForOf, NgTemplateOutlet, JsonPipe]
 })
 export class ExpandSideNavItemComponent {
   @Input() navItem!: NavItem

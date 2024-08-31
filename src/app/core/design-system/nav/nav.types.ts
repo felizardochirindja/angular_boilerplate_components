@@ -1,7 +1,7 @@
 export interface NavItem {
     title?: string
     subtitle?: string
-    type: 'normal' | 'expand' | 'pack' | 'divide' | 'space'
+    type: 'simple' | 'expand' | 'pack' | 'separator' | 'space'
     hidden: (item: NavItem) => boolean
     active?: boolean
     disabled?: boolean

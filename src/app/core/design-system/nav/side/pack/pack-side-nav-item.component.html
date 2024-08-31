@@ -21,13 +21,13 @@
 
     <div class="side-nav-item-children" *ngFor="let child of navItem.children">
         <ng-container *ngIf="!child.hidden(child)">
-            <ds-empty-side-nav-item [navItem]="child" *ngIf="child.type === 'normal'"></ds-empty-side-nav-item>
+            <ds-simple-side-nav-item [navItem]="child" *ngIf="child.type === 'simple'"></ds-simple-side-nav-item>
 
             <ds-expand-side-nav-item [navItem]="child" *ngIf="child.type === 'expand'"></ds-expand-side-nav-item>
         </ng-container>
 
-        <div class="divide" *ngIf="child.type === 'divide'">divide</div>
+        <ds-separator-side-nav-item *ngIf="child.type === 'separator'"></ds-separator-side-nav-item>
 
-        <div class="space" *ngIf="child.type === 'space'">space</div>
+        <ds-space-side-nav-item *ngIf="child.type === 'space'"></ds-space-side-nav-item>
     </div>
 </div>

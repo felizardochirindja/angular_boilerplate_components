@@ -17,7 +17,7 @@ export class LeftSideBarSkeletonComponent {
   navItems: NavItem[] = [
     {
       icon: 'icon 1',
-      type: 'normal',
+      type: 'simple',
       link: 'teste',
       title: 'title',
       subtitle: 'subtitle',
@@ -53,7 +53,7 @@ export class LeftSideBarSkeletonComponent {
       children: [
         {
           icon: 'icon 2.1',
-          type: 'normal',
+          type: 'simple',
           link: 'teste 2.1',
           title: 'title 2.1 pack',
           subtitle: 'subtitle 2.1',
@@ -69,7 +69,7 @@ export class LeftSideBarSkeletonComponent {
           children: [],
         },
         {
-          type: 'divide',
+          type: 'separator',
           children: [],
           hidden: (item: NavItem) => {
             return false;
@@ -93,7 +93,7 @@ export class LeftSideBarSkeletonComponent {
           children: [
             {
               icon: 'icon 2.1.1',
-              type: 'normal',
+              type: 'simple',
               link: 'teste 2.1.1',
               title: 'title 2.1.1',
               subtitle: 'subtitle 2.1.1',
@@ -109,8 +109,15 @@ export class LeftSideBarSkeletonComponent {
               children: [],
             },
             {
+              type: 'separator',
+              hidden: (item: NavItem) => {
+                return false;
+              },
+              children: [],
+            },
+            {
               icon: 'icon 2.1.2',
-              type: 'normal',
+              type: 'simple',
               link: 'teste 2.1.2',
               title: 'title 2.1.2',
               subtitle: 'subtitle 2.1.2',

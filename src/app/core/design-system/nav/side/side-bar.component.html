@@ -5,28 +5,20 @@
     </div>
 
     <div class="nav-content">
-        <div class="nav-content-header">
-            <ng-content select="[navContentHeader]"></ng-content>
-        </div>
-
         <!-- nav items -->
         <ng-container *ngFor="let navItem of navItems">
             <ng-container *ngIf="!navItem.hidden(navItem)">
-                <ds-empty-side-nav-item [navItem]="navItem" *ngIf="navItem.type === 'normal'"></ds-empty-side-nav-item>
+                <ds-simple-side-nav-item [navItem]="navItem" *ngIf="navItem.type === 'simple'"></ds-simple-side-nav-item>
 
                 <ds-expand-side-nav-item [navItem]="navItem" *ngIf="navItem.type === 'expand'"></ds-expand-side-nav-item>
             
                 <ds-pack-side-nav-item [navItem]="navItem" *ngIf="navItem.type === 'pack'"></ds-pack-side-nav-item>
 
-                <div class="divide" *ngIf="navItem.type === 'divide'">divide</div>
+                <ds-separator-side-nav-item *ngIf="navItem.type === 'separator'"></ds-separator-side-nav-item>
 
-                <div class="space" *ngIf="navItem.type === 'space'">space</div>
+                <ds-space-side-nav-item *ngIf="navItem.type === 'space'"></ds-space-side-nav-item>
             </ng-container>
         </ng-container>
-
-        <div class="nav-content-footer">
-            <ng-content select="[navContentFooter]"></ng-content>
-        </div>
     </div>
 
     <!-- nav footer -->

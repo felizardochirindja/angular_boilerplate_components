@@ -1,8 +1,9 @@
 <!-- Navigation -->
-<ds-side-bar [navItems]="navItems" *ngIf="navOpened"></ds-side-bar>
+
+<ds-side-bar [navItems]="navItems" *ngIf="navOpened" class="sidebar"></ds-side-bar>
 
 <!-- Wrapper -->
-<div>
+<div class="wrapper">
     <!-- Header -->
     <header>
         <button (click)="navOpened = !navOpened">toggle nav</button>
