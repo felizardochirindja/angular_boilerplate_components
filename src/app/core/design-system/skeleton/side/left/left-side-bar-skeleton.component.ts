@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { SideNavComponent } from '../../../nav/side/side-nav.component';
+import { SideBarComponent } from '../../../nav/side/side-bar.component';
 import { NavItem } from '../../../nav/nav.types';
 
 @Component({
+  selector: 'ds-left-side-bar-skeleton',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, SideNavComponent],
-  templateUrl: './default-side-skeleton.component.html',
-  styleUrls: ['./default-side-skeleton.component.css'],
+  imports: [CommonModule, RouterOutlet, SideBarComponent],
+  templateUrl: './left-side-bar-skeleton.component.html',
+  styleUrls: ['./left-side-bar-skeleton.component.css'],
 })
-export class DefaultSideSkeletonComponent {
+export class LeftSideBarSkeletonComponent {
   navOpened: boolean = true;
   
   navItems: NavItem[] = [

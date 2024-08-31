@@ -21,7 +21,7 @@
 
     <div class="side-nav-item-children" *ngFor="let child of navItem.children">
         <ng-container *ngIf="!child.hidden(child)">
-            <ds-normal-side-nav-item [navItem]="child" *ngIf="child.type === 'normal'"></ds-normal-side-nav-item>
+            <ds-empty-side-nav-item [navItem]="child" *ngIf="child.type === 'normal'"></ds-empty-side-nav-item>
 
             <ds-expand-side-nav-item [navItem]="child" *ngIf="child.type === 'expand'"></ds-expand-side-nav-item>
         </ng-container>

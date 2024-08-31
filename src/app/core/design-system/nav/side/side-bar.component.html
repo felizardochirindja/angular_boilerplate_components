@@ -12,7 +12,7 @@
         <!-- nav items -->
         <ng-container *ngFor="let navItem of navItems">
             <ng-container *ngIf="!navItem.hidden(navItem)">
-                <ds-normal-side-nav-item [navItem]="navItem" *ngIf="navItem.type === 'normal'"></ds-normal-side-nav-item>
+                <ds-empty-side-nav-item [navItem]="navItem" *ngIf="navItem.type === 'normal'"></ds-empty-side-nav-item>
 
                 <ds-expand-side-nav-item [navItem]="navItem" *ngIf="navItem.type === 'expand'"></ds-expand-side-nav-item>
             

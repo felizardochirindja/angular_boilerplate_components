@@ -4,12 +4,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NavItem } from '../../nav.types';
 
 @Component({
-  selector: 'ds-normal-side-nav-item',
-  templateUrl: './default-side-nav-item.component.html',
-  styleUrls: ['./default-side-nav-item.component.css'],
+  selector: 'ds-empty-side-nav-item',
+  templateUrl: './empty-side-nav-item.component.html',
+  styleUrls: ['./empty-side-nav-item.component.css'],
   standalone: true,
   imports: [NgClass, RouterLink, RouterLinkActive, NgIf, NgTemplateOutlet]
 })
-export class DefaultSideNavItemComponent {
+export class EmptySideNavItemComponent {
   @Input() navItem!: NavItem
 }
