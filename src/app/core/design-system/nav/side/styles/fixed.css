@@ -42,7 +42,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-grow: 1;
 }
 
 .side-nav-item-title {
@@ -56,7 +55,7 @@
 }
 
 .side-nav-item-icon-badge {
-    margin-left: auto;
+    margin-left: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,4 +93,8 @@
 
 .side-nav-item-children {
     margin-left: 20px;
+}
+
+.side-nav-item-arrow {
+    margin-left: auto;
 }
