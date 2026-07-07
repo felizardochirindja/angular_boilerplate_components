@@ -9,6 +9,4 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './empty-skeleton.component.html',
   styleUrls: ['./empty-skeleton.component.css']
 })
-export class EmptySkeletonComponent {
-
-}
+export class EmptySkeletonComponent {}
