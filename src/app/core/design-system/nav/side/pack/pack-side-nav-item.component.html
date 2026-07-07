@@ -1,5 +1,5 @@
 <div class="side-nav-item-container">
-    <div class="side-nav-item">
+    <div class="side-nav-item side-nav-item-group-header">
         <!-- Title & Subtitle -->
         <div class="side-nav-item-title-container">
             <div class="side-nav-item-title">
@@ -12,7 +12,8 @@
         </div>
 
         <!-- Badge -->
-        <div class="side-nav-item-icon-badge" *ngIf="navItem.badge">
+        <div class="side-nav-item-icon-badge" *ngIf="navItem.badge"
+            [ngClass]="{'badge-info': navItem.badge.type === 'info', 'badge-warning': navItem.badge.type === 'warning'}">
             <div class="side-nav-item-icon-badge-content">
                 {{ navItem.badge.text }}
             </div>
@@ -21,7 +22,7 @@
 
     <div class="side-nav-item-children" *ngFor="let child of navItem.children">
         <ng-container *ngIf="!child.hidden(child)">
-            <ds-simple-side-nav-item [navItem]="child" *ngIf="child.type === 'simple'"></ds-simple-side-nav-item>
+            <ds-simple-side-nav-item [navItem]="child" *ngIf="child.type === 'simple'" (itemClick)="itemClick.emit()"></ds-simple-side-nav-item>
 
             <ds-expand-side-nav-item [navItem]="child" *ngIf="child.type === 'expand'"></ds-expand-side-nav-item>
         </ng-container>

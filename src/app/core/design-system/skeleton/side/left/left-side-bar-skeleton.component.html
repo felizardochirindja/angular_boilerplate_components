@@ -1,21 +1,41 @@
-<!-- Navigation -->
-<ds-side-bar [navItems]="navItems" *ngIf="navOpened" class="sidebar"></ds-side-bar>
+<!-- Sidebar -->
+<ds-side-bar [navItems]="navItems" [(isOpen)]="navOpened" class="sidebar">
+    <div navHeader>
+        <!-- <div class="nav-header-brand-icon">W</div> -->
+        <div class="nav-header-brand-text">Workspace</div>
+    </div>
+    <div navFooter>
+        <div class="nav-footer-user">
+            <div class="nav-footer-avatar">&#x2637;</div>
+            <div class="nav-footer-info">
+                <div class="nav-footer-name">User Name</div>
+                <div class="nav-footer-role">Admin</div>
+            </div>
+        </div>
+    </div>
+</ds-side-bar>
 
 <!-- Wrapper -->
-<div class="wrapper">
+<div class="wrapper" [class.wrapper-shifted]="navOpened" [class.wrapper-full]="!navOpened || isMobile">
     <!-- Header -->
-    <header>
-        <button (click)="navOpened = !navOpened">toggle nav</button>
-        <div>header</div>
+    <header class="top-bar">
+        <button class="toggle-btn" (click)="toggleNav()">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="4" width="16" height="2" rx="1" fill="currentColor"/>
+                <rect x="2" y="9" width="16" height="2" rx="1" fill="currentColor"/>
+                <rect x="2" y="14" width="16" height="2" rx="1" fill="currentColor"/>
+            </svg>
+        </button>
+        <div class="top-bar-title">Discovery Items</div>
     </header>
 
     <!-- Content -->
-    <main>
+    <main class="content">
         <router-outlet></router-outlet>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <span>footer</span>
+    <footer class="bottom-bar">
+        <span>&copy; 2026 Workspace</span>
     </footer>
 </div>

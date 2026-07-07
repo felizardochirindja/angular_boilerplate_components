@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NavItem } from '../../nav.types';
 import { ExpandSideNavItemComponent } from '../expand/expand-side-nav-item.component';
 import { SimpleSideNavItemComponent } from '../empty/simple-side-nav-item.component';
-import { NgForOf, NgIf } from '@angular/common';
+import { NgForOf, NgIf, NgClass } from '@angular/common';
 import { SeparatorSideNavItemComponent } from '../separator/separator-side-nav-item.component';
 import { SpaceSideNavItemComponent } from '../space/space-side-nav-item.component';
 
@@ -11,8 +11,9 @@ import { SpaceSideNavItemComponent } from '../space/space-side-nav-item.componen
   templateUrl: './pack-side-nav-item.component.html',
   styleUrls: ['../styles/fixed.css'],
   standalone: true,
-  imports: [SimpleSideNavItemComponent, ExpandSideNavItemComponent, SeparatorSideNavItemComponent, SpaceSideNavItemComponent, NgIf, NgForOf]
+  imports: [SimpleSideNavItemComponent, ExpandSideNavItemComponent, SeparatorSideNavItemComponent, SpaceSideNavItemComponent, NgIf, NgForOf, NgClass]
 })
 export class PackSideNavItemComponent {
   @Input() navItem!: NavItem
+  @Output() itemClick = new EventEmitter()
 }

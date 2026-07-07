@@ -6,7 +6,7 @@
 
     <!-- nav item enabled -->
     <ng-container *ngIf="!navItem.disabled">
-        <div class="side-nav-item" [ngClass]="{'side-nav-expand-item-active': navItem.active}" (click)="toggleExpand()">
+        <div class="side-nav-item" [ngClass]="{'side-nav-expand-item-active': navItem.active || expanded}" (click)="toggleExpand()">
             <ng-container *ngTemplateOutlet="navItemTemplate"></ng-container>
         </div>
     </ng-container>
@@ -44,12 +44,13 @@
     </div>
 
     <!-- Badge -->
-    <div class="side-nav-item-icon-badge" *ngIf="navItem.badge">
+    <div class="side-nav-item-icon-badge" *ngIf="navItem.badge"
+        [ngClass]="{'badge-info': navItem.badge.type === 'info', 'badge-warning': navItem.badge.type === 'warning'}">
         <div class="side-nav-item-icon-badge-content">
             {{ navItem.badge.text }}
         </div>
     </div>
 
-    <!-- arow -->
-    <div class="side-nav-item-arrow">{{ expanded ? 'up' : 'down' }}</div>
+    <!-- arrow -->
+    <div class="side-nav-item-arrow" [style.transform]="expanded ? 'rotate(180deg)' : 'rotate(0)'">&#x25BE;</div>
 </ng-template>

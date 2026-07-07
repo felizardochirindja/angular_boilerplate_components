@@ -1,5 +1,5 @@
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NavItem } from '../../nav.types';
 
@@ -12,4 +12,5 @@ import { NavItem } from '../../nav.types';
 })
 export class SimpleSideNavItemComponent {
   @Input() navItem!: NavItem
+  @Output() itemClick = new EventEmitter()
 }

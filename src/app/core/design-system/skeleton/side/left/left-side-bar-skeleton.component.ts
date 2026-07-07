@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SideBarComponent } from '../../../nav/side/side-bar.component';
@@ -13,128 +13,127 @@ import { NavItem } from '../../../nav/nav.types';
 })
 export class LeftSideBarSkeletonComponent {
   navOpened: boolean = true;
-  
+  isMobile: boolean = window.innerWidth <= 768;
+
   navItems: NavItem[] = [
     {
-      icon: 'icon 1',
+      icon: '🏠',
       type: 'simple',
-      link: 'teste',
-      title: 'title',
-      subtitle: 'subtitle',
+      link: '/example',
+      title: 'Dashboard',
+      subtitle: 'Overview',
       active: true,
       disabled: false,
       badge: {
         text: '28',
         type: 'info',
       },
-      hidden: (item: NavItem) => {
-        return false;
-      },
+      hidden: (item: NavItem) => false,
       children: [],
     },
     {
       type: 'space',
       children: [],
-      hidden(item) {
-        return false;
-      },
+      hidden: () => false,
     },
     {
-      icon: 'icon 2',
+      icon: '📦',
       type: 'pack',
-      link: 'teste 2',
-      title: 'title 2 pack',
-      subtitle: 'subtitle 2',
+      link: '/products',
+      title: 'Products',
+      subtitle: 'Manage catalog',
       active: false,
       disabled: false,
-      hidden: (item: NavItem) => {
-        return false;
-      },
+      hidden: () => false,
       children: [
         {
-          icon: 'icon 2.1',
+          icon: '📋',
           type: 'simple',
-          link: 'teste 2.1',
-          title: 'title 2.1 pack',
-          subtitle: 'subtitle 2.1',
+          link: '/products/list',
+          title: 'All Products',
+          subtitle: 'Browse items',
           active: false,
           disabled: false,
           badge: {
             text: '12',
             type: 'warning',
           },
-          hidden: (item: NavItem) => {
-            return false;
-          },
+          hidden: () => false,
           children: [],
         },
         {
           type: 'separator',
           children: [],
-          hidden: (item: NavItem) => {
-            return false;
-          },
+          hidden: () => false,
         },
         {
-          icon: 'icon 2.2',
+          icon: '📂',
           type: 'expand',
-          link: 'teste 2.2',
-          title: 'title 2.2 pack',
-          subtitle: 'subtitle 2.2',
+          link: '/products/categories',
+          title: 'Categories',
+          subtitle: 'Organize',
           active: false,
           disabled: false,
-          badge: {
-            text: '12',
-            type: 'warning',
-          },
-          hidden: (item: NavItem) => {
-            return false;
-          },
+          hidden: () => false,
           children: [
             {
-              icon: 'icon 2.1.1',
+              icon: '🏷️',
               type: 'simple',
-              link: 'teste 2.1.1',
-              title: 'title 2.1.1',
-              subtitle: 'subtitle 2.1.1',
+              link: '/products/categories/electronics',
+              title: 'Electronics',
+              subtitle: 'Gadgets & devices',
               active: false,
               disabled: true,
-              badge: {
-                text: '12',
-                type: 'warning',
-              },
-              hidden: (item: NavItem) => {
-                return false;
-              },
+              hidden: () => false,
               children: [],
             },
             {
               type: 'separator',
-              hidden: (item: NavItem) => {
-                return false;
-              },
+              hidden: () => false,
               children: [],
             },
             {
-              icon: 'icon 2.1.2',
+              icon: '👕',
               type: 'simple',
-              link: 'teste 2.1.2',
-              title: 'title 2.1.2',
-              subtitle: 'subtitle 2.1.2',
+              link: '/products/categories/clothing',
+              title: 'Clothing',
+              subtitle: 'Apparel & fashion',
               active: false,
               disabled: false,
-              badge: {
-                text: '12',
-                type: 'warning',
-              },
-              hidden: (item: NavItem) => {
-                return false;
-              },
+              hidden: () => false,
               children: [],
             },
           ],
         },
       ],
     },
+    {
+      type: 'separator',
+      children: [],
+      hidden: () => false,
+    },
+    {
+      icon: '⚙️',
+      type: 'simple',
+      link: '/settings',
+      title: 'Settings',
+      subtitle: 'Preferences',
+      active: false,
+      disabled: false,
+      hidden: () => false,
+      children: [],
+    },
   ];
+
+  @HostListener('window:resize')
+  onResize(): void {
+    this.isMobile = window.innerWidth <= 768;
+    if (!this.isMobile) {
+      this.navOpened = true;
+    }
+  }
+
+  toggleNav(): void {
+    this.navOpened = !this.navOpened;
+  }
 }
