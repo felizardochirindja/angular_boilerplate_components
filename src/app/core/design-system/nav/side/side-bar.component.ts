@@ -1,6 +1,6 @@
 import { NavItem, SideNavPosition } from '../nav.types';
 import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
-import { SimpleSideNavItemComponent } from './empty/simple-side-nav-item.component';
+import { SimpleSideNavItemComponent } from './simple/simple-side-nav-item.component';
 import { NgForOf, NgIf } from '@angular/common';
 import { ExpandSideNavItemComponent } from './expand/expand-side-nav-item.component';
 import { PackSideNavItemComponent } from './pack/pack-side-nav-item.component';
@@ -19,12 +19,13 @@ export class SideBarComponent {
   @Input() position: SideNavPosition = 'left'
   @Input() isOpen: boolean = true
   @Output() isOpenChange = new EventEmitter<boolean>()
-
+  
   isMobile: boolean = window.innerWidth <= 768
 
   @HostListener('window:resize')
   onResize(): void {
     this.isMobile = window.innerWidth <= 768
+
     if (!this.isMobile) {
       this.isOpen = true
       this.isOpenChange.emit(true)
