@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NavItem } from '../../nav.types';
 import { ExpandSideNavItemComponent } from '../expand/expand-side-nav-item.component';
-import { SimpleSideNavItemComponent } from '../empty/simple-side-nav-item.component';
+import { SimpleSideNavItemComponent } from '../simple/simple-side-nav-item.component';
 import { NgForOf, NgIf, NgClass } from '@angular/common';
 import { SeparatorSideNavItemComponent } from '../separator/separator-side-nav-item.component';
 import { SpaceSideNavItemComponent } from '../space/space-side-nav-item.component';
