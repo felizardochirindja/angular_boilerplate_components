@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './space-side-nav-item.component.html',
   styleUrls: ['../styles/fixed.css']
 })
-export class SpaceSideNavItemComponent {
-
-}
+export class SpaceSideNavItemComponent {}

@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './separator-side-nav-item.component.html',
   styleUrls: ['../styles/fixed.css']
 })
-export class SeparatorSideNavItemComponent {
-
-}
+export class SeparatorSideNavItemComponent {}
